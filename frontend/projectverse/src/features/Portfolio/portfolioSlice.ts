@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Project } from "../../data/Profile";
+import { Project } from "../../data/Project";
 import { PORTFOLIO_GetUserProjects } from "./portfolioThunks";
 
 export const portfolioSlice = createSlice({

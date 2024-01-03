@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { PORTFOLIO_GetUserProjects } from '../features/Portfolio/portfolioThunks';
-import { Project } from '../data/Profile';
+import { Project } from '../data/Project';
 import ProjectCard from '../features/Portfolio/ProjectCard';
 import { Loader } from '../components/Loader';
 import CodeIcon from '@mui/icons-material/Code';

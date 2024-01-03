@@ -5,6 +5,7 @@ import authReducer from '../features/Auth/authSlice'
 import collabReducer from '../features/Collaborations/collabSlice'
 import portfolioReducer from '../features/Portfolio/portfolioSlice';
 import feedReducer from '../features/Feed/feedSlice';
+import designerReducer from '../features/Designer/designerSlice';
 
 
 const store = configureStore({
@@ -14,7 +15,8 @@ const store = configureStore({
     auth:authReducer,
     collab:collabReducer,
     portfolio:portfolioReducer,
-    feed:feedReducer
+    feed:feedReducer,
+    designer:designerReducer
   },
 
   middleware: getDefaultMiddleware =>

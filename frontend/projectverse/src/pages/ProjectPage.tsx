@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetProjectQuery } from '../features/Portfolio/portfolioApiSlice';
 import { Loader } from '../components/Loader';
-import { Project } from '../data/Profile';
+import { Project } from '../data/Project';
 
 const ProjectPage = () => {
 
@@ -21,7 +21,7 @@ const ProjectPage = () => {
 
     <>
     <div>{data.name}</div>
-    <iframe src={data.projectUrl} height="700px" width="100%" title="Iframe Example"></iframe>
+    <iframe src={data.projectUrl} height="700px" width="100%" referrerPolicy='no-referrer' title="Iframe Example"></iframe>
     </>
     
   )

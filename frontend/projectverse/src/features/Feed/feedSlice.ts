@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import Post from "../../data/Post";
-import { Project } from "../../data/Profile";
+import { Project } from "../../data/Project";
 import portfolioSlice from "../Portfolio/portfolioSlice";
 import PostComment from "../../data/PostComments";
 

@@ -1,5 +1,5 @@
 import PostComment from "./PostComments";
-import { Project } from "./Profile";
+import { Project } from "./Project";
 
 interface Post{
   id:string,

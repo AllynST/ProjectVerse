@@ -1,11 +1,13 @@
-import { feedApiSlice } from "./feedApiSlice";
+import { feedApiSlice, useGetPostsQuery } from "./feedApiSlice";
 import {feedSlice} from "./feedSlice"
 
 
 export function FEED_GetPosts(){  
 
   return async function getPostsThunk(dispatch:any) {
-    const response = await dispatch(feedApiSlice.endpoints.getPosts.initiate({}));
+    //ukryć implementacje / dodać klase pośredniczącą z API
+
+    const response = await dispatch(feedApiSlice.endpoints.getPosts.initiate({})).then();
     dispatch(feedSlice.actions.setPosts(response.data));
   }
 

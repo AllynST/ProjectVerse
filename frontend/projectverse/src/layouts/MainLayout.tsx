@@ -5,7 +5,7 @@ export const MainLayout = () => {
 
   const location = useLocation();
 
-  const displaySideBar = location.pathname == "/" ? false : true;
+  const displaySideBar = location.pathname == "/" || location.pathname == "/designer"  ? false : true;
 
   return (
     <>

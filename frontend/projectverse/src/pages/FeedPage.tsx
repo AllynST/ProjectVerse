@@ -13,9 +13,11 @@ export const FeedPage = () => {
 
 
   const posts = useSelector((state:any) => state.feed.posts);
-
+  
+  
   useEffect(() => {
     dispatch(FEED_GetPosts())
+
     .then(()=>{setLoading(false)})
   }, [dispatch])
   

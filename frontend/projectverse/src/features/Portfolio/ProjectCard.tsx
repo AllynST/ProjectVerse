@@ -1,5 +1,5 @@
 import React from 'react'
-import { Project } from '../../data/Profile'
+import { Project } from '../../data/Project'
 import img from '../../assets/TechnologiesIcons/react.png'
 import Technology from '../../data/Technology'
 import { Button } from '@mui/material'

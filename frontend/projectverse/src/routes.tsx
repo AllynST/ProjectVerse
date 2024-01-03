@@ -16,6 +16,7 @@ import CollaborationPage from './pages/CollaborationPage';import CollabDescripti
 import PortfolioPage from './pages/PortfolioPage';
 import AddProjectPage from './pages/AddProjectPage';
 import ProjectPage from './pages/ProjectPage';
+import DesignerPage from './pages/DesignerPage';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
         {/* <Route path="portfolio/:id" element={ <PortfolioSinglePage/> }></Route> */}
 
         <Route path="feed" element={ <FeedPage/> }></Route>
+        <Route path="designer" element={ <DesignerPage/> }></Route>
     
         
       </Route>
