@@ -19,6 +19,8 @@ const authSlice = createSlice({
 
     },
     logOut :(state) => {
+      localStorage.clear();
+      console.log("logout in slice triggered")
       state.user = null;
       state.token = null;
     }    

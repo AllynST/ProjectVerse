@@ -54,25 +54,23 @@ export type ComponentType =
 export default ProfileComponent
 
 
-const sampleAboutMeComponent:ProfileComponent = {
+export const sampleAboutMeComponent:ProfileComponent = {
   id: "1",
-  componentType: {
-    id: "1",    
+  componentType: { 
     category: "AboutMe",
     type: "AboutMe"
   },
 
   colStart: 1,
-  colEnd:7,
-  rowStart:5,
-  rowEnd:7
+  colEnd:13,
+  rowStart:1,
+  rowEnd:4
 
 }
 
 const sampleHeaderComponent:ProfileComponent = {
   id: "2",
   componentType: {
-    id: "2",
     category: "Header",
     type: "HeaderImgBanner"
   },

@@ -23,6 +23,10 @@ interface ProfileData{
 
 export default ProfileData;
 
+export type ProfileDataTarget = 
+"AboutMe" | "Achievements" | "Education" | "PrimaryTechnology" | "KnownTechnologies" | "Interests" |
+"Education" | "Certificates" | "Socials"
+
 export const sampleProfileData = {
   
     "id": "profile-123",
@@ -75,8 +79,8 @@ export const sampleProfileData = {
         "course": "Bachelor of Science",
         "major": "Computer Science",
         "academicTitle": "Bachelor",
-        "startDate": new Date("2016-09-01"),
-        "endDate": new Date("2020-05-01")
+        "startDate": "2016-09-01",
+        "endDate": "2020-05-01"
       },
       {
         "id": "edu-id-2",
@@ -85,8 +89,8 @@ export const sampleProfileData = {
         "course": "Master of Science",
         "major": "Computer Engineering",
         "academicTitle": "Master",
-        "startDate": new Date("2020-09-01"),
-        "endDate": new Date("2022-05-01")
+        "startDate": "2020-09-01",
+        "endDate": "2022-05-01"
       }
     ],
     "Certificates": [
@@ -94,17 +98,17 @@ export const sampleProfileData = {
         "id": "cert-id-1",
         "name": "React Developer Certification",
         "institution": "React Certification Institute",
-        "issuedAt": new Date("2021-03-15"),
-        "expiresAt": new Date("2023-03-15")
+        "issuedAt": "2021-03-15",
+        "expiresAt": "2023-03-15"
       },
       {
         "id": "cert-id-2",
         "name": "Node.js Certification",
         "institution": "Node.js Certification Authority",
-        "issuedAt": new Date("2022-06-10"),
-        "expiresAt": new Date("2024-06-10")
+        "issuedAt": "2022-06-10",
+        "expiresAt": "2024-06-10"
       }
-    ],
+    ],    
     "Socials": [
       {
         "id": "github-social",

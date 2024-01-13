@@ -6,6 +6,7 @@ interface Post{
   project:Project,
   viewsCount:number,
   likesCount:number,
+  commentsCount:number,
   isLikedByCurrentUser:boolean,
   postComments:PostComment[]  
 }

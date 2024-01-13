@@ -41,6 +41,13 @@ export const feedApiSlice = apiSlice.injectEndpoints({
       })
     }),
 
+    updateViewCount:builder.query({
+      query:(postID:string) =>({
+        url:`/posts/${postID}/views`,
+        method:'PATCH',      
+      })
+    }),
+
   })
 })
 
@@ -48,5 +55,6 @@ export const feedApiSlice = apiSlice.injectEndpoints({
 
 export const {
 useGetPostsQuery,
-useAddCommentQuery
+useAddCommentQuery,
+useUpdateViewCountQuery
 } = feedApiSlice

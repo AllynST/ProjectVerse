@@ -64,6 +64,7 @@ export const Login = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               name="password" 
+              type="password"
               label="Password" 
               variant="outlined"
               error={errors.password ? true : false}            

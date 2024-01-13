@@ -15,6 +15,7 @@ export const CollabDescCard: React.FC<{ collab: Collaboration }> = ({ collab }) 
   const [targetDesc, setTargetDesc] = useState(null as CollaborationPosition | null);
 
   const [applySlider,setApplySlider] = useState(false);
+  console.log(collab);
 
   useEffect(() => {
     setTargetDesc(collab.collaborationPositions[0]);

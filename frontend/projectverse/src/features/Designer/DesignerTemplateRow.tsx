@@ -11,7 +11,7 @@ const DesignerTemplateRow:React.FC<{rowNumber:number}> = ({rowNumber}) => {
   }
 
   return (
-    <div className='w-full flex justify-center gap-5'>
+    <div className='w-full flex justify-between'>
       
       {rowCells}
     </div>

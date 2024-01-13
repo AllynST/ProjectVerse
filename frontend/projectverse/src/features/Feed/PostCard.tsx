@@ -5,9 +5,11 @@ import Technology from '../../data/Technology';
 import { Button, Input } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import CardComments from './CardComments';
-import { FEED_AddComment, FEED_GetComments } from './feedThunks';
+import { FEED_AddComment, FEED_GetComments, updateViewCount } from './feedThunks';
 import { useDispatch } from 'react-redux';
 import PostStatsComponent from './PostStatsComponent';
+import { useUpdateViewCountQuery } from './feedApiSlice';
+import { useGetUserProjectsQuery } from '../Portfolio/portfolioApiSlice';
 
 const PostCard: React.FC<{ post: Post }> = ({ post }) => {
 
@@ -29,6 +31,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
 
 
   const projectRedirectHandler = () => {
+    dispatch(updateViewCount(post.id));
     navigate(`/portfolio/project/${post.project.id}`)
   }
 
@@ -90,7 +93,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
           </div>
 
           <div className='px-5'>
-            <h3 className="text-accent"> Comments</h3>
+            <h3 className="text-accent"> Comments {post.commentsCount}</h3>
 
             <div className="flex flex-col">
               <Input className='w-full py-2' onChange={handleTextChange}></Input>

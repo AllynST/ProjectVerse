@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetProjectQuery } from '../features/Portfolio/portfolioApiSlice';
 import { Loader } from '../components/Loader';
 import { Project } from '../data/Project';
+import { useUpdateViewCountQuery } from '../features/Feed/feedApiSlice';
 
 const ProjectPage = () => {
 
   const params = useParams()
   const id = params.id!;
 
-  const {data,error,isLoading} = useGetProjectQuery(id);  
+  const {data,error,isLoading} = useGetProjectQuery(id);
+ 
 
   if(isLoading){
     return <Loader />
@@ -21,7 +23,10 @@ const ProjectPage = () => {
 
     <>
     <div>{data.name}</div>
-    <iframe src={data.projectUrl} height="700px" width="100%" referrerPolicy='no-referrer' title="Iframe Example"></iframe>
+    <Suspense>
+     <iframe src={data.projectUrl} height="700px" width="100%" referrerPolicy='no-referrer' title="Iframe Example"></iframe>
+    </Suspense>
+    
     </>
     
   )

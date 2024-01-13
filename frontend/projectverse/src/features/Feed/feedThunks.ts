@@ -49,3 +49,12 @@ export function FEED_UnLikePost(postID:string){
 
 }
 
+export function updateViewCount(postID:string){
+
+  return async function updateViewCountThunk(dispatch:any) {
+    await dispatch(feedApiSlice.endpoints.updateViewCount.initiate(postID));   
+  }
+
+}
+
+

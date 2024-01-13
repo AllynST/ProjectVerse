@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import logo from '../../assets/logo.png'
 import { List } from '@mui/material';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import User from '../../data/User';
 
 import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftOutlined';
@@ -19,11 +19,16 @@ import { useGetUserCollabsMutation } from '../Collaborations/colabApiSlice';
 import SideBarMutationList from './SideBarMutationList';
 import Collaboration from '../../data/Collaboration';
 import CodeIcon from '@mui/icons-material/Code';
+import { logOut } from '../Auth/authSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export const SideNav = () => {
-  
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [expanded,setExpanded] = useState(true);
   const [data,setData] = useState({} as Collaboration)
 
@@ -33,10 +38,16 @@ export const SideNav = () => {
     setExpanded(!expanded);
   }
 
+  const logOutHandler = () =>{
+   
+    dispatch(logOut());
+    navigate("/")
+  }
+
   const user:User  = useSelector((state:any) => state.auth.user)
 
 
-  useEffect(() => {
+  useEffect(() => {    
     (async () =>{
       setData(await userCollabMutation(user.id).unwrap())
     })()
@@ -91,9 +102,10 @@ export const SideNav = () => {
       <div>
 
         <SideBarItem name="Account" href={null} expanded = {expanded} Icon={PersonIcon} />
-        <SideBarItem name="Profile" href={null} expanded = {expanded} Icon={ContactPageIcon}/>
+        <SideBarItem name="Profile" href={`/profile/${user.id}`} expanded = {expanded} Icon={ContactPageIcon}/>
+        <button onClick={logOutHandler}>
         <SideBarItem name="Logout" href={null} expanded = {expanded} Icon={LogoutIcon}/>
-        
+        </button>
 
         <div className=' bg-black flex gap-6 py-3 p-5  justify-center text-white items-center'>
 

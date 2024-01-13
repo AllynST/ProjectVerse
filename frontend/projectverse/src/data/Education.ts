@@ -5,8 +5,8 @@ interface Education {
   course: string;
   major: string;
   academicTitle: string;
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
 }
 
 export default Education;

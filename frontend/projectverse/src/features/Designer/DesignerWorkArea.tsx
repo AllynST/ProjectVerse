@@ -31,10 +31,10 @@ const DesignerWorkArea = () => {
         {...GridItems}
       </div>
 
-      <div className='absolute left 0 top-0 designerGrid gap-[8px] h-full w-full'>
-      {components.map((comp:ProfileComponent)=>
-        <ProfileComponentElem key={comp.id}  component={comp}/>
-      )}
+      <div className='absolute left 0 top-0 designerGrid gap-[8px] h-[166.6%] w-full'>
+        {components.map((comp:ProfileComponent)=>
+          <ProfileComponentElem key={comp.id} editable={true}  component={comp}/>
+        )}
       </div>
 
     </div>
