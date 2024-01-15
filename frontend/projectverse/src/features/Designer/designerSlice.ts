@@ -1,12 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import ProfileComponent, {sampleAboutMeComponent, sampleComponents } from "../../data/ProfileComponent";
+import ProfileComponent, {sampleAboutMeComponent, sampleComponents, sampleHeaderComponent } from "../../data/ProfileComponent";
 import ProfileData, { ProfileDataTarget, sampleProfileData } from "../../data/ProfileData";
 
 export const designerSlice = createSlice({
   name:'designer',
 
   initialState:{    
-    components:[sampleAboutMeComponent] as ProfileComponent[],
+    components:[
+
+      sampleHeaderComponent,sampleAboutMeComponent
+
+    ] as ProfileComponent[],
     highlightedID: null as string|null,
     profileData:sampleProfileData as ProfileData,
     theme:{
@@ -26,7 +30,7 @@ export const designerSlice = createSlice({
     },
 
     deleteComponent:(state,action:PayloadAction<{id:string}>) =>{  
-      const targetIndex = state.components.findIndex((component:ProfileComponent) => component.id = action.payload.id);
+      const targetIndex = state.components.findIndex((component:ProfileComponent) => component.id == action.payload.id);
       state.components.splice(targetIndex,1);
     },
 
@@ -76,6 +80,7 @@ export const designerSlice = createSlice({
     },
 
     highlightComponent:(state,action:PayloadAction<{id:string}>) =>{
+      console.log("Component: "+action.payload.id+" highlighted")
       state.highlightedID = action.payload.id
     },
 

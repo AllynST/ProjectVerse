@@ -13,6 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { technologiesListIcons } from '../../data/tempTechnologiesList'
+import IconByTechnology from '../../components/CustomIcon'
 
 // This exports the whole icon packs for Brand and Solid.
 library.add(fab, fas)
@@ -33,15 +34,6 @@ const ProjectCard:React.FC<{project:Project}> = ({project}) => {
 
   const iconTechnology = project.usedTechnologies[0].name;
 
-
-  const techIconObj = technologiesListIcons.find(x=>x.technologyName == iconTechnology);
-  const iconName = techIconObj?.fontawesomeIconName.split(" ")
-  const color = techIconObj?.iconColor;
-
-  console.log(`${techIconObj?.technologyName}: text-[${color}]`);
-
-
-
   return (  
 
       <div className='glass bg-glassMorph p-16 flex'>
@@ -50,8 +42,8 @@ const ProjectCard:React.FC<{project:Project}> = ({project}) => {
         
           {/* <FontAwesomeIcon icon={icon(name:'react' style:'brand' family:'classic')} /> */}
           {/* <FontAwesomeIcon className={`h-[90px] absolute translate-x-[-50%] left-1/2 origin-center top-[-50px] text-[#68A063]`} icon={[iconName[0],iconName[1]]} /> */}
-          <div style={{color:color}}>
-            <FontAwesomeIcon className="h-[90px] absolute translate-x-[-50%] left-1/2 origin-center top-[-50px]" icon={[iconName[0],iconName[1]]}/>
+          <div className='absolute translate-x-[-50%] left-1/2 origin-center top-[-50px]'>
+            <IconByTechnology technologyName={iconTechnology}/>
           </div>
           <div className="mt-[25px]  flex flex-col gap-5">
             <h2 className="text-2xl my-3 font-bold text-center">{project.name}</h2>

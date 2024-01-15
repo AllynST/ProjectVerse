@@ -113,12 +113,12 @@ export const sampleProfileData = {
       {
         "id": "github-social",
         "name": "GitHub",
-        "url": "https://github.com/jane_doe"
+        "link": "https://github.com/jane_doe"
       },
       {
         "id": "linkedin-social",
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/jane_doe"
+        "link": "https://www.linkedin.com/in/jane_doe"
       }
     ],
     "Projects": [

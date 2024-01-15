@@ -35,7 +35,7 @@ export type ComponentType =
     "AboutMe"
   } |
   { 
-    category: "Project";
+    category: "Projects";
     type: 
     "Project" |
     "ProjectSingle"   
@@ -45,7 +45,8 @@ export type ComponentType =
     type: 
     "Header" |
     "HeaderImgBanner"
-  } 
+  }
+
  
 
   
@@ -63,21 +64,21 @@ export const sampleAboutMeComponent:ProfileComponent = {
 
   colStart: 1,
   colEnd:13,
-  rowStart:1,
-  rowEnd:4
+  rowStart:4,
+  rowEnd:7
 
 }
 
-const sampleHeaderComponent:ProfileComponent = {
+export const sampleHeaderComponent:ProfileComponent = {
   id: "2",
   componentType: {
     category: "Header",
-    type: "HeaderImgBanner"
+    type: "Header"
   },
   colStart: 1,
-  colEnd:7,
+  colEnd:13,
   rowStart:1,
-  rowEnd:5,
+  rowEnd:4,
 
   data:{
 
@@ -89,7 +90,10 @@ const sampleHeaderComponent:ProfileComponent = {
 
 export const toolBarComponents = {
   "AboutMe":["AboutMe"],
-  "Header" : ["Header","HeaderImgBanner"]
+  "Header" : ["Header","HeaderImgBanner"],
+  "Achievements" :["Achievements"],
+  "Projects" : ["Projects"],
+  "Certificates" : ["Certificates"]
 }
 
 
